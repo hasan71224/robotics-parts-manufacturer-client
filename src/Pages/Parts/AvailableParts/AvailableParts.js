@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import OrderModal from '../OrderModal/OrderModal';
 import Products from '../Products/Products';
 
 const AvailableParts = () => {
-    const [products, setProducts] = useState([])
+    const [products, setProducts] = useState([]);
+    const [order, setOrder] = useState(null);
     useEffect(()=>{
         fetch('parts.json')
         .then(res=>res.json())
@@ -16,10 +18,12 @@ const AvailableParts = () => {
                     products.map(product => <Products
                         key={product._id}
                         product={product}
+                        setOrder={setOrder}
                     >
                     </Products>)
                 }
             </div>
+           {order && <OrderModal order={order} setOrder={setOrder}> </OrderModal>}
         </div>
     );
 };

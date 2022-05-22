@@ -40,8 +40,8 @@
         "name": "HTM Board",
         "img": "http://4.bp.blogspot.com/-SrbNULKVNdg/VB7nRinys8I/AAAAAAAAChA/ikXQNzYASYQ/s1600/arduino.jpg",
         "description": "Arduino AVR Development Boards We have a range of Arduino boards at RS that feature an AVR ATmega microcontroller at the core.",
-        "minimumOrder": 100,
-        "quantity": 0,
+        "minimumOrder": 90,
+        "quantity": 89,
         "price": 140
     }
 ]
