@@ -1,0 +1,47 @@
+[
+    {
+        "_id": 1,
+        "name": "Arduino Uno",
+        "img": "http://4.bp.blogspot.com/-SrbNULKVNdg/VB7nRinys8I/AAAAAAAAChA/ikXQNzYASYQ/s1600/arduino.jpg",
+        "description": "Arduino AVR Development Boards We have a range of Arduino boards at RS that feature an AVR ATmega microcontroller at the core.",
+        "minimumOrder": 100,
+        "quantity": 1000,
+        "price": 99
+    },
+    {
+        "_id": 2,
+        "name": "Arduino Nano",
+        "img": "http://4.bp.blogspot.com/-SrbNULKVNdg/VB7nRinys8I/AAAAAAAAChA/ikXQNzYASYQ/s1600/arduino.jpg",
+        "description": "Arduino AVR Development Boards We have a range of Arduino boards at RS that feature an AVR ATmega microcontroller at the core.",
+        "minimumOrder": 100,
+        "quantity": 6300,
+        "price": 452
+    },
+    {
+        "_id": 3,
+        "name": "Arduino Mega",
+        "img": "http://4.bp.blogspot.com/-SrbNULKVNdg/VB7nRinys8I/AAAAAAAAChA/ikXQNzYASYQ/s1600/arduino.jpg",
+        "description": "Arduino AVR Development Boards We have a range of Arduino boards at RS that feature an AVR ATmega microcontroller at the core.",
+        "minimumOrder": 100,
+        "quantity": 1058,
+        "price": 251
+    },
+    {
+        "_id": 4,
+        "name": "Arduino Ultra",
+        "img": "http://4.bp.blogspot.com/-SrbNULKVNdg/VB7nRinys8I/AAAAAAAAChA/ikXQNzYASYQ/s1600/arduino.jpg",
+        "description": "Arduino AVR Development Boards We have a range of Arduino boards at RS that feature an AVR ATmega microcontroller at the core.",
+        "minimumOrder": 100,
+        "quantity": 1200,
+        "price": 199
+    },
+    {
+        "_id": 5,
+        "name": "HTM Board",
+        "img": "http://4.bp.blogspot.com/-SrbNULKVNdg/VB7nRinys8I/AAAAAAAAChA/ikXQNzYASYQ/s1600/arduino.jpg",
+        "description": "Arduino AVR Development Boards We have a range of Arduino boards at RS that feature an AVR ATmega microcontroller at the core.",
+        "minimumOrder": 100,
+        "quantity": 0,
+        "price": 140
+    }
+]

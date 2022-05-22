@@ -3,10 +3,10 @@ import challenges from '../../../Assets/manufecture/manufecture1.png'
 
 const Challenges = () => {
     return (
-        <div class="hero min-h-screen bg-base-200">
+        <div class="hero min-h-screen">
             <div class="hero-content flex-col lg:flex-row">
-                <img src={challenges} class="max-w-sm rounded-lg mr-10" />
-                <div>
+                <img src={challenges} class="max-w-sm rounded-lg" />
+                <div className='ml-20'>
                     <h1 class="text-5xl font-bold">Robots Help Manufacturing Companies Meet Challenges.</h1>
                     <p class="py-6">
                         <li>Robots do the dirty, dangerous and menial tasks so humans can assume more challenging and satisfying jobs.</li>
