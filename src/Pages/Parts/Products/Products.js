@@ -1,7 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Products = ({ product, setOrder }) => {
-    const { name, img, description, minimumOrder, quantity, price } = product;
+    const {_id, name, img, description, minimumOrder, quantity, price } = product;
+
+    const navigate = useNavigate();
+    const navigateToItemDetails = (_id) =>{
+        navigate(`/parts/${_id}`)
+    }
+
     return (
         <div className="card lg:max-w-lg bg-base-100 shadow-xl lg:mx-5">
             <div className="card-body justify-center items-center">
@@ -16,10 +23,11 @@ const Products = ({ product, setOrder }) => {
 
                 <div className="card-actions justify-center">
                     <label
-                        htmlFor="order-modal"
+                        // htmlFor="order-modal"
                         disabled={quantity < minimumOrder}
-                        onClick={() => setOrder(product)}
-                        className="btn btn-sm btn-primary uppercase text-white font-bold bg-gradient-to-r from-primary to-secondary">Place Order</label>
+                        // onClick={() => setOrder(product)}
+                        onClick={()=>navigateToItemDetails(_id)}
+                        className="btn btn-sm btn-primary uppercase text-white font-bold bg-gradient-to-r from-primary to-secondary">Purchase Order</label>
 
                 </div>
             </div>

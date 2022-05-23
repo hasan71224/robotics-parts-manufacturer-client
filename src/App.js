@@ -8,6 +8,7 @@ import MyPortfolio from './Pages/Home/MyPortfolio/MyPortfolio';
 import NotFound from './Pages/Shared/NotFound';
 import Login from './Pages/Home/Login/Login';
 import Parts from './Pages/Parts/Parts/Parts';
+import Purchase from './Pages/Parts/Purchase/Purchase';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path='/myPortfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='/parts' element={<Parts></Parts>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/parts/:partsId' element={<Purchase></Purchase>}></Route>
         <Route path='/*' element={<NotFound></NotFound>}></Route>
       </Routes>
     </div>

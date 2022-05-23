@@ -17,10 +17,10 @@ const OrderModal = ({order, setOrder}) => {
                     <label for="order-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <h3 class="font-bold text-lg text-secondary">Order For {name}</h3>
                     <form onSubmit={handleOrder} className='grid grid-cols-1 gap-2 mt-5'>
-
+                    
+                        <input type="text" name='name' value={name} className="input input-bordered w-full max-w-xl" />
                         {/* <input type="text" name='name' disabled value={user?.displayName || ''} className="input input-bordered w-full max-w-xl" /> */}
                         {/* <input type="email" name='phone' disabled value={user?.email || ''} className="input input-bordered w-full max-w-xl" /> */}
-                        <input type="text" name='name' placeholder="Name" className="input input-bordered w-full max-w-xl" />
                         <input type="text" name='address' placeholder="Address" className="input input-bordered w-full max-w-xl" />
                         <input type="text" name='phone' placeholder="Phone Number" className="input input-bordered w-full max-w-xl" />
                         <input type="submit" value='Submit' className="input input-bordered w-full max-w-xl btn btn-accent text-white font-semi-bold" />
