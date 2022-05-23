@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import OrderModal from '../OrderModal/OrderModal';
 
-const Products = ({ product, setOrder }) => {
+const Products = ({ product }) => {
     const {_id, name, img, description, minimumOrder, quantity, price } = product;
+    
+    // const [order, setOrder] = useState(null);
 
     const navigate = useNavigate();
-    const navigateToItemDetails = (_id) =>{
+    const navigateToPartsDetails = (_id) =>{
         navigate(`/parts/${_id}`)
     }
 
@@ -23,14 +26,14 @@ const Products = ({ product, setOrder }) => {
 
                 <div className="card-actions justify-center">
                     <label
-                        // htmlFor="order-modal"
                         disabled={quantity < minimumOrder}
                         // onClick={() => setOrder(product)}
-                        onClick={()=>navigateToItemDetails(_id)}
+                        onClick={()=>navigateToPartsDetails(_id)}
                         className="btn btn-sm btn-primary uppercase text-white font-bold bg-gradient-to-r from-primary to-secondary">Purchase Order</label>
 
                 </div>
             </div>
+            {/* {order && <OrderModal order={order} setOrder={setOrder}> </OrderModal>} */}
         </div>
     );
 };

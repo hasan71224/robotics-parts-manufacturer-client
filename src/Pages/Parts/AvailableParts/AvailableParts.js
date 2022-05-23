@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import OrderModal from '../OrderModal/OrderModal';
+// import OrderModal from '../OrderModal/OrderModal';
 import Products from '../Products/Products';
 
 const AvailableParts = () => {
@@ -23,7 +23,7 @@ const AvailableParts = () => {
                     </Products>)
                 }
             </div>
-           {order && <OrderModal order={order} setOrder={setOrder}> </OrderModal>}
+           {/* {order && <OrderModal order={order} setOrder={setOrder}> </OrderModal>} */}
         </div>
     );
 };

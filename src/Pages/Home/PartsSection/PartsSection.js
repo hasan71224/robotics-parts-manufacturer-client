@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import OrderModal from '../../Parts/OrderModal/OrderModal';
+// import OrderModal from '../../Parts/OrderModal/OrderModal';
 import Products from '../../Parts/Products/Products';
 
 const PartsSection = () => {
     const [products, setProducts] = useState([])
-    const [order, setOrder] = useState(null);
+    // const [order, setOrder] = useState(null);
     useEffect(()=>{
         fetch('http://localhost:5000/parts')
         .then(res=>res.json())
@@ -18,12 +18,12 @@ const PartsSection = () => {
                     products.slice(0,3).map(product => <Products
                         key={product._id}
                         product={product}
-                        setOrder={setOrder}
+                        // setOrder={setOrder}
                     >
                     </Products>)
                 }
             </div>
-           {order && <OrderModal order={order} setOrder={setOrder}> </OrderModal>}
+           {/* {order && <OrderModal order={order} setOrder={setOrder}> </OrderModal>} */}
         </div>
     );
 };

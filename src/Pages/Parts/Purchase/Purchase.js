@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-const Purchase = ({ setOrder }) => {
+const Purchase = () => {
     const {partsId} = useParams();
     const [parts, setParts] = useState({});
     useEffect(()=>{
@@ -26,8 +26,7 @@ const Purchase = ({ setOrder }) => {
                 <label
                     htmlFor="order-modal"
                     disabled={parts.quantity < parts.minimumOrder}
-                    onClick={() => setOrder(parts.product)}
-                    className="btn btn-sm btn-primary uppercase text-white font-bold bg-gradient-to-r from-primary to-secondary">Purchase Order</label>
+                    className="btn btn-sm btn-primary uppercase text-white font-bold bg-gradient-to-r from-primary to-secondary">Confirm Order</label>
 
             </div>
         </div>
