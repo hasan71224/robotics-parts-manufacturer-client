@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import OrderModal from '../OrderModal/OrderModal';
+import Purchase from '../Purchase/Purchase';
 
 const Products = ({ product }) => {
     const {_id, name, img, description, minimumOrder, quantity, price } = product;
     
-    // const [order, setOrder] = useState(null);
+    const [order, setOrder] = useState(null);
 
     const navigate = useNavigate();
     const navigateToPartsDetails = (_id) =>{
@@ -33,7 +34,7 @@ const Products = ({ product }) => {
 
                 </div>
             </div>
-            {/* {order && <OrderModal order={order} setOrder={setOrder}> </OrderModal>} */}
+            {order && <Purchase order={order} setOrder={setOrder}> </Purchase>}
         </div>
     );
 };

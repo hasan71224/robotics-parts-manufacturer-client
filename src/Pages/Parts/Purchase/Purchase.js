@@ -3,7 +3,8 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
 import auth from '../../../firebase.init';
 
-const Purchase = () => {
+const Purchase = ({order, setOrder}) => {
+    // const {_id, name}= order
     const { partsId } = useParams();
     const [parts, setParts] = useState({});
     const [purchaseQuantity, setPurchaseQuantity] = useState()
@@ -14,6 +15,15 @@ const Purchase = () => {
             .then(res => res.json())
             .then(data => setParts(data))
     }, [])
+
+    const handleOrder = event =>{
+        event.preventDefault();
+        const phone = event.target.phone.value;
+        // console.log(_id, name);
+        console.log(partsId, parts.name);
+        setOrder(null);
+    }
+
 
     let purchaseError;
     if (error) {
@@ -37,7 +47,7 @@ const Purchase = () => {
     return (
         <div className='flex h-screen justify-center items-center'>
             <div className="card lg:max-w-lg bg-base-100 shadow-xl lg:mx-5 ">
-                <div className="card-body ">
+                <div className="card-body" onSubmit={handleOrder}>
                     <div className='card justify-center items-center'>
                         <h2 className="text-2xl card-title text-secondary mb-2">{parts.name}</h2>
                         <div className="w-32 rounded">
