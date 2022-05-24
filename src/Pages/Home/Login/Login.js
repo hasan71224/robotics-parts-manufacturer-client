@@ -45,8 +45,9 @@ const Login = () => {
         signInWithEmailAndPassword(data.email, data.password)
     }
 
-    if(gUser) {
+    if(user || gUser) {
         console.log(gUser);
+        navigate(from, {replace: true})
     }
     return (
         <div className='flex h-screen justify-center items-center'>
