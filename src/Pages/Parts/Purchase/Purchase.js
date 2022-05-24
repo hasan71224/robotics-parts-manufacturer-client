@@ -68,12 +68,29 @@ const Purchase = ({order, setOrder}) => {
             console.log(newQuantity);
             let partsUpdate = { ...parts, quantity: newQuantity }
             console.log(partsUpdate);
-            setParts(partsUpdate)
+            setParts(partsUpdate);
+
+            //update parts quantity
+            const updatedParts={
+                quantity: newQuantity
+            }
+            fetch(`http://localhost:5000/parts/${partsId}`, {
+                method: 'PATCH',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(updatedParts)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                })
+
+
         }
         else {
             alert('Enter valuable quantity');
         }
-
     }
     return (
         <div className='flex h-screen justify-center items-center'>
