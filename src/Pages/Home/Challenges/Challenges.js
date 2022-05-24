@@ -3,12 +3,12 @@ import challenges from '../../../Assets/manufecture/manufecture1.png'
 
 const Challenges = () => {
     return (
-        <div class="hero min-h-screen">
-            <div class="hero-content flex-col lg:flex-row">
-                <img src={challenges} class="max-w-sm rounded-lg" />
+        <div className="hero min-h-screen">
+            <div className="hero-content flex-col lg:flex-row">
+                <img src={challenges} className="max-w-sm rounded-lg" />
                 <div className='ml-20'>
-                    <h1 class="text-5xl font-bold">Robots Help Manufacturing Companies Meet Challenges.</h1>
-                    <p class="py-6">
+                    <h1 className="text-5xl font-bold">Robots Help Manufacturing Companies Meet Challenges.</h1>
+                    <p className="py-6">
                         <li>Robots do the dirty, dangerous and menial tasks so humans can assume more challenging and satisfying jobs.</li>
                         <li>Robots keep working without vacation time, lunch breaks or sick days.</li>
                         <li>Robots increase productivity and quality, helping companies grow and become more competitive.</li>
@@ -16,7 +16,7 @@ const Challenges = () => {
                         <li>Robot production today has reached the point at which they can be purchased and installed in less time and for less money.</li>
                         <li>Robots create jobs in robotics, programming engineering and integration. Other jobs are created as the higher quality and increased productivity lowers costs and stimulates demand for everyone.</li>
                     </p>
-                    <button class="btn btn-primary">Learn More</button>
+                    <button className="btn btn-primary">Learn More</button>
                 </div>
             </div>
         </div>

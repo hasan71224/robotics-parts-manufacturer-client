@@ -30,36 +30,40 @@ const Purchase = () => {
             setParts(partsUpdate)
         }
         else {
-            // message: 'Must be 6 character or longer';
-            
+            alert('Enter valuable quantity');
         }
 
     }
     return (
-        <div className="card lg:max-w-lg bg-base-100 shadow-xl lg:mx-5 ">
-            <div className="card-body ">
-                <div className='card justify-center items-center'>
-                    <h2 className="text-2xl card-title text-secondary mb-3">{parts.name}</h2>
-                    <div className="w-32 rounded">
-                        <img src={parts.img} alt={parts.name} />
+        <div className='flex h-screen justify-center items-center'>
+            <div className="card lg:max-w-lg bg-base-100 shadow-xl lg:mx-5 ">
+                <div className="card-body ">
+                    <div className='card justify-center items-center'>
+                        <h2 className="text-2xl card-title text-secondary mb-2">{parts.name}</h2>
+                        <div className="w-32 rounded">
+                            <img src={parts.img} alt={parts.name} />
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <p> <b>Description:</b> {parts.description}</p>
-                    <p> <b>Minimum Order Products:</b> {parts.minimumOrder}</p>
-                    <p><b>{parts.quantity} {parts.quantity > 1 ? 'product' : 'product'} Available</b></p>
-                    <p><b>Price:</b> $ {parts.price}</p>
-                    <p> <b>Purchase Quantity:</b> <input type="number" onChange={(e) => setPurchaseQuantity(e.target.value)} placeholder="Purchase Quantity" onBlur={handleQuantity} class="input input-bordered input-sm w-full max-w-xs" /></p>
-                    {purchaseError}
-                    <input type="text" name='name' disabled value={user?.displayName || ''} className="input input-bordered w-full max-w-xs mt-2" />
-                    <input type="email" name='phone' disabled value={user?.email || ''} className="input input-bordered w-full max-w-xs mt-2" />
-                </div>
+                    <div>
+                        <p> <b>Description:</b> {parts.description}</p>
+                        <p> <b>Minimum Order Products:</b> {parts.minimumOrder}</p>
+                        <p><b>{parts.quantity} {parts.quantity > 1 ? 'product' : 'product'} Available</b></p>
+                        <p><b>Price:</b> $ {parts.price}</p>
+                        <p> <b>Purchase Quantity:</b> <input type="number" onChange={(e) => setPurchaseQuantity(e.target.value)} placeholder="Purchase Quantity" onBlur={handleQuantity} className="input input-bordered input-sm w-full max-w-xs" /></p>
+                        {purchaseError}
+                        <input type="text" name='name' disabled value={user?.displayName || ''} className="input input-bordered w-full max-w-xs mt-1" />
+                        <input type="email" name='phone' disabled value={user?.email || ''} className="input input-bordered w-full max-w-xs mt-1" />
+                        <input type="text" name='address' placeholder="Address" className="input input-bordered w-full max-w-xs mt-1" />
+                        <input type="text" name='phone' placeholder="Phone Number" className="input input-bordered w-full max-w-xs mt-1" />
 
-                <div className="card-actions justify-center">
-                    <label
-                        className="btn btn-sm btn-primary uppercase text-white font-bold bg-gradient-to-r from-primary to-secondary">Confirm Order
-                    </label>
+                    </div>
 
+                    <div className="card-actions justify-center">
+                        <label
+                            className="btn btn-sm btn-primary uppercase text-white font-bold bg-gradient-to-r from-primary to-secondary">Confirm Order
+                        </label>
+
+                    </div>
                 </div>
             </div>
         </div>
