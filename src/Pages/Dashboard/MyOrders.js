@@ -92,7 +92,7 @@ const MyOrders = () => {
                     setDeletingOrder={setDeletingOrder}
                 ></DeleteConfirmModal>}
             </td>
-            
+
         </div>
     );
 };
