@@ -7,8 +7,7 @@ import Loading from '../Shared/Loading';
 const AddProduct = () => {
 
     const { register, formState: { errors }, handleSubmit, reset} = useForm();
-    // const { data: services, isLoading } = useQuery('services', () => fetch('https://still-taiga-81457.herokuapp.com/service').then(res => res.json()))
-
+   
     const imageStorageKey = 'c1dd83e2b223d428c938e8ce0f6eca42';
 
     const onSubmit = async data => {
