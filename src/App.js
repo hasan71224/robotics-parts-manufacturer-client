@@ -22,6 +22,7 @@ import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin';
 import ManageProduct from './Pages/Dashboard/ManageProduct';
+import RequireAdmin from './Pages/Home/Login/RequireAdmin';
 
 function App() {
   return (
@@ -52,7 +53,7 @@ function App() {
 
           <Route path='manageAllOrders' element={<ManageAllOrders></ManageAllOrders>}></Route>
           <Route path='addProduct' element={<AddProduct></AddProduct>}></Route>
-          <Route path='makeAdmin' element={<MakeAdmin></MakeAdmin>}></Route>
+          <Route path='makeAdmin' element={<RequireAdmin><MakeAdmin></MakeAdmin></RequireAdmin>}></Route>
           <Route path='manageProduct' element={<ManageProduct></ManageProduct>}></Route>
 
         </Route>

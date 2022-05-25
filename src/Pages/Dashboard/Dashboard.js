@@ -5,7 +5,7 @@ import auth from '../../firebase.init';
 import useAdmin from '../../hooks/useAdmin';
 
 const Dashboard = () => {
-    
+
     const [user] = useAuthState(auth)
     const [admin] = useAdmin(user)
     return (
@@ -22,14 +22,21 @@ const Dashboard = () => {
                     {/* <!-- Sidebar content here --> */}
                     <li><Link to='/dashboard'>My Profile</Link></li>
 
-                    <li><Link to='/dashboard/myOrders'>My Orders</Link></li>
-                    <li><Link to='/dashboard/addReview'>Add review</Link></li>
-                    {/* {admin && <> */}
-                        <li><Link to='/dashboard/manageAllOrders'>Manage Orders</Link></li>
-                        <li><Link to='/dashboard/addProduct'>Add Product</Link></li>
-                        <li><Link to='/dashboard/makeAdmin'>Make Admin</Link></li>
-                        <li><Link to='/dashboard/manageProduct'>Manage Product</Link></li>
-                    {/* </>} */}
+                    { !admin &&
+                        <>
+                            <li><Link to='/dashboard/myOrders'>My Orders</Link></li>
+                            <li><Link to='/dashboard/addReview'>Add review</Link></li>
+                        </>
+                    }
+
+                    {admin &&
+                        <>
+                            <li><Link to='/dashboard/manageAllOrders'>Manage Orders</Link></li>
+                            <li><Link to='/dashboard/addProduct'>Add Product</Link></li>
+                            <li><Link to='/dashboard/makeAdmin'>Make Admin</Link></li>
+                            <li><Link to='/dashboard/manageProduct'>Manage Product</Link></li>
+                        </>
+                    }
                 </ul>
 
             </div>
