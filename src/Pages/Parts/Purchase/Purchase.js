@@ -13,11 +13,12 @@ const Purchase = ({order, setOrder}) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const url = `http://localhost:5000/parts/${partsId}`;
+        const url = `http://localhost:5000/product/${partsId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setParts(data))
-    }, [])
+    }, [])  
+
 
     const handleOrder = event =>{
         event.preventDefault();
@@ -63,7 +64,7 @@ const Purchase = ({order, setOrder}) => {
 
     const handleQuantity = () => {
         let newQuantity = parseInt(purchaseQuantity)
-        if (newQuantity > 99 && newQuantity <= parts.quantity) {
+        if (newQuantity >= parts.minimumOrder && newQuantity <= parts.quantity) {
             newQuantity = parts.quantity - newQuantity
             console.log(newQuantity);
             let partsUpdate = { ...parts, quantity: newQuantity }
@@ -74,7 +75,7 @@ const Purchase = ({order, setOrder}) => {
             const updatedParts={
                 quantity: newQuantity
             }
-            fetch(`http://localhost:5000/parts/${partsId}`, {
+            fetch(`http://localhost:5000/product/${partsId}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json'

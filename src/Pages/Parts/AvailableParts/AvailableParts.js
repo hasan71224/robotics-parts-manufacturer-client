@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from 'react';
-// import OrderModal from '../OrderModal/OrderModal';
+import React, { useEffect, useState } from 'react'; 
 import Products from '../Products/Products';
  
 const AvailableParts = () => {
     const [products, setProducts] = useState([]);
     const [order, setOrder] = useState(null);
     useEffect(()=>{
-        fetch('http://localhost:5000/parts')
-        .then(res=>res.json())
+        fetch('http://localhost:5000/product')
+        .then(res=>res.json()) 
         .then(data=>setProducts(data));
-    },[])
+    },[]) 
     return (
         <div>
             <h2 className='text-4xl font-bold text-primary text-center py-10'>Available Parts</h2>
@@ -23,7 +22,6 @@ const AvailableParts = () => {
                     </Products>)
                 }
             </div>
-           {/* {order && <OrderModal order={order} setOrder={setOrder}> </OrderModal>} */}
         </div>
     );
 };

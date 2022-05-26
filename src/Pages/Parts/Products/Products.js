@@ -8,12 +8,12 @@ const Products = ({ product }) => {
     const [order, setOrder] = useState(null);
 
     const navigate = useNavigate();
-    const navigateToPartsDetails = (_id) =>{
+    const navigateToProductDetails = (_id) =>{
         navigate(`/parts/${_id}`)
     }
 
     return (
-        <div className="card lg:max-w-lg bg-base-100 shadow-xl lg:mx-5">
+        <div className="card lg:max-w-lg bg-base-100 shadow-xl lg:mx-5 mb-12">
             <div className="card-body justify-center items-center">
                 <h2 className="text-2xl card-title text-secondary">{name}</h2>
                 <div className="w-32 rounded">
@@ -26,11 +26,11 @@ const Products = ({ product }) => {
 
                 <div className="card-actions justify-center">
                     <label
-                        disabled={quantity < minimumOrder}
+                        // disabled={quantity < minimumOrder}
                         // onClick={() => setOrder(product)}
-                        onClick={()=>navigateToPartsDetails(_id)}
+                        onClick={()=>navigateToProductDetails(_id)}
                         className="btn btn-sm btn-primary uppercase text-white font-bold bg-gradient-to-r from-primary to-secondary">Purchase Order</label>
-
+ 
                 </div>
             </div>
             {order && <Purchase order={order} setOrder={setOrder}> </Purchase>}

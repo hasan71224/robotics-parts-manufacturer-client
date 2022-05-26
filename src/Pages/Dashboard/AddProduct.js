@@ -19,7 +19,7 @@ const AddProduct = () => {
         fetch(url, {
             method: 'POST',
             body: formData
-        })
+        }) 
             .then(res => res.json())
             .then(result => {
                 if (result.success) {
