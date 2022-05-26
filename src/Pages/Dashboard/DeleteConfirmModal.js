@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { toast } from 'react-toastify';
 
-const DeleteConfirmModal = ({deletingOrder, refetch, setDeletingDoctor}) => {
-    const {name, email} = deletingOrder;
+const DeleteConfirmModal = ({deletingOrder, refetch, setDeletingOrder}) => {
+    const {name, customer} = deletingOrder;
+  
     const handleDelete = () => {
-        fetch(`http://localhost:5000/order/${email}`, {
+        fetch(`http://localhost:5000/order/${customer}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -14,12 +15,18 @@ const DeleteConfirmModal = ({deletingOrder, refetch, setDeletingDoctor}) => {
             .then(data => {
                 console.log(data);
                 if (data.deletedCount) {
-                    toast.success(`${name} is deleted.`);
-                    setDeletingDoctor(null)
+                    toast.success(`${customer} Order is deleted.`);
+                    setDeletingOrder(null)
                     refetch();
+                    if(refetch){
+                    console.log('true');
+                    }
                 }
             })
     }
+
+
+
     return (
         <div>
         <input type="checkbox" id="delete-confirm-modal" class="modal-toggle" />

@@ -2,8 +2,25 @@ import React from 'react';
 import { toast } from 'react-toastify';
 
 const ProductRow = ({ product, index, refetch, setDeletingProduct }) => {
-    const { name, description, img, quantity, minimumOrder, price } = product;
+    const {id, name, description, img, quantity, minimumOrder, price } = product;
 
+    const handleDelete = name =>{
+        fetch(`http://localhost:5000/product/${name}`,{
+            method: 'DELETE',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+        .then(res=>res.json())
+        .then(data =>{
+            console.log(data);
+            if(data){
+                toast(`${name} is deleted.`)
+                setDeletingProduct(null)
+                refetch();
+            }
+        })
+    }
     
     return (
         <tr>
@@ -20,10 +37,11 @@ const ProductRow = ({ product, index, refetch, setDeletingProduct }) => {
             <td>{quantity}</td>
             <td>{minimumOrder}</td>
             <td>{price}</td>
-            <td>
+            <td> <button onClick={()=> handleDelete(name)} class="btn btn-xs btn-error">Delete</button> </td>
+            {/* <td>
                 <label onClick={()=> setDeletingProduct(product)} for="delete-confirm-modal" class="btn btn-xs btn-error">Delete</label>
                 
-            </td>
+            </td> */}
         </tr>
     );
 };

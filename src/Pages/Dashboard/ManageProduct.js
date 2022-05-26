@@ -50,7 +50,6 @@ const ManageProduct = () => {
                 </div>
                 {deletingProduct && <DeleteConfirmModal
                     deletingProduct={deletingProduct}
-                    refetch={refetch}
                     setDeletingProduct={setDeletingProduct}
                 ></DeleteConfirmModal>}
             </div>
