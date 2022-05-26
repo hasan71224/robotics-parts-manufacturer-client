@@ -78,7 +78,9 @@ const MyOrders = () => {
                                         </td>
 
                                         <td>
-                                            <label onClick={() => setDeletingOrder(order)} for="delete-confirm-modal" class="btn btn-xs btn-error">Delete</label>
+                                        {(order.price && !order.paid) && <label onClick={() => setDeletingOrder(order)} for="delete-confirm-modal" class="btn btn-xs btn-error">Delete</label>}
+
+                                        {(order.price && order.paid) && <span className='text-success'>Processing</span>}
                                         </td>
 
                                     </tr>
