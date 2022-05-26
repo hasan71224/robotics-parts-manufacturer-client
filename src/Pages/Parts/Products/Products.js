@@ -11,7 +11,7 @@ const Products = ({ product }) => {
     const navigateToProductDetails = (_id) =>{
         navigate(`/parts/${_id}`)
     }
-
+ 
     return (
         <div className="card lg:max-w-lg bg-base-100 shadow-xl lg:mx-5 mb-12">
             <div className="card-body justify-center items-center">

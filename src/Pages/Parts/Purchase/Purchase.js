@@ -11,7 +11,7 @@ const Purchase = ({order, setOrder}) => {
     const [purchaseQuantity, setPurchaseQuantity] = useState()
     const [user, loading, error] = useAuthState(auth);
     const navigate = useNavigate();
-
+ 
     useEffect(() => {
         const url = `http://localhost:5000/product/${partsId}`;
         fetch(url)
