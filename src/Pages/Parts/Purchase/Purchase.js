@@ -13,7 +13,7 @@ const Purchase = ({order, setOrder}) => {
     const navigate = useNavigate();
  
     useEffect(() => {
-        const url = `http://localhost:5000/product/${partsId}`;
+        const url = `https://shielded-harbor-82661.herokuapp.com/product/${partsId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setParts(data))
@@ -36,7 +36,7 @@ const Purchase = ({order, setOrder}) => {
             // phone: event.target.phone.value
         }
         console.log(order);
-        fetch('http://localhost:5000/order',{
+        fetch('https://shielded-harbor-82661.herokuapp.com/order',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -76,7 +76,7 @@ const Purchase = ({order, setOrder}) => {
             const updatedParts={
                 quantity: newQuantity
             }
-            fetch(`http://localhost:5000/product/${partsId}`, {
+            fetch(`https://shielded-harbor-82661.herokuapp.com/product/${partsId}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json'

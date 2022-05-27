@@ -31,7 +31,7 @@ const AddReview = () => {
                         img: img
                     }
                     //send to your database
-                    fetch('http://localhost:5000/rating', {
+                    fetch('https://shielded-harbor-82661.herokuapp.com/rating', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

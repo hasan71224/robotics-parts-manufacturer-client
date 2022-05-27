@@ -6,8 +6,8 @@ const PartsSection = () => {
     const [products, setProducts] = useState([])
     // const [order, setOrder] = useState(null);
     useEffect(()=>{
-        fetch('http://localhost:5000/product')
-        // fetch('http://localhost:5000/product')
+        fetch('https://shielded-harbor-82661.herokuapp.com/product')
+        // fetch('https://shielded-harbor-82661.herokuapp.com/product')
         .then(res=>res.json())
         .then(data=>setProducts(data));
     },[])

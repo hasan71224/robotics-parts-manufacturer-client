@@ -19,7 +19,7 @@ const ManageAllOrders = () => {
     )
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/manageOrder`, {
+            fetch(`https://shielded-harbor-82661.herokuapp.com/manageOrder`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

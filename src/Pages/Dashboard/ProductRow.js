@@ -5,7 +5,7 @@ const ProductRow = ({ product, index, refetch, setDeletingProduct }) => {
     const {id, name, description, img, quantity, minimumOrder, price } = product;
 
     const handleDelete = name =>{
-        fetch(`http://localhost:5000/product/${name}`,{
+        fetch(`https://shielded-harbor-82661.herokuapp.com/product/${name}`,{
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
