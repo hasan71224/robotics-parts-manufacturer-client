@@ -31,6 +31,7 @@ const Purchase = ({order, setOrder}) => {
             price: parts.price,
             customer: user.email,
             customerName: user.displayName,
+            // new change
             // address: event.target.address.value,
             // phone: event.target.phone.value
         }

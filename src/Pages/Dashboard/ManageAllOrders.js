@@ -12,6 +12,7 @@ const ManageAllOrders = () => {
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
     const [deletingOrder, setDeletingOrder] = useState(null)
+    const [pending, setPending] = useState('pending');
 
 
     const { data: order, isLoading, refetch } = useQuery("order",
@@ -39,6 +40,8 @@ const ManageAllOrders = () => {
                 })
         }
     }, [user])
+
+    
 
     return (
         <div>
@@ -79,7 +82,7 @@ const ManageAllOrders = () => {
                                         <td>
                                             {(order.price && !order.paid) && <label onClick={() => setDeletingOrder(order)} for="delete-confirm-modal" class="btn btn-xs btn-error">Delete</label>}
 
-                                            {(order.price && order.paid) && <span className='text-success font-bold'>Processing</span>}
+                                            {(order.price && order.paid) && <span  className='text-dark font-bold btn btn-xs btn-warning'>Pending</span>}
                                         </td>
 
                                     </tr>
