@@ -46,8 +46,8 @@ const MyOrders = () => {
         <div>
             <h2>My Orders: {orders.length}</h2>
 
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th></th>
@@ -78,7 +78,7 @@ const MyOrders = () => {
                                         </td>
 
                                         <td>
-                                            {(order.price && !order.paid) && <label onClick={() => setDeletingOrder(order)} for="delete-confirm-modal" class="btn btn-xs btn-error">Delete</label>}
+                                            {(order.price && !order.paid) && <label onClick={() => setDeletingOrder(order)} for="delete-confirm-modal" className="btn btn-xs btn-error">Delete</label>}
 
                                             {(order.price && order.paid) && <span className='text-success font-bold'>Pending</span>}
                                         </td>

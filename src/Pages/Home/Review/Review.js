@@ -9,8 +9,8 @@ const Review = ({ review }) => {
                     <img src={img} alt={name} />
                 </div> */}
 
-                <div class="avatar">
-                    <div class="w-24 rounded-full">
+                <div className="avatar">
+                    <div className="w-24 rounded-full">
                         <img src={img} />
                     </div>
                 </div>

@@ -26,8 +26,8 @@ const ProductRow = ({ product, index, refetch, setDeletingProduct }) => {
         <tr>
             <th>{index + 1}</th>
             <td>
-                <div class="avatar">
-                    <div class="w-12 rounded">
+                <div className="avatar">
+                    <div className="w-12 rounded">
                         <img src={img} alt={name} />
                     </div>
                 </div>
@@ -37,9 +37,9 @@ const ProductRow = ({ product, index, refetch, setDeletingProduct }) => {
             <td>{quantity}</td>
             <td>{minimumOrder}</td>
             <td>{price}</td>
-            <td> <button onClick={()=> handleDelete(name)} class="btn btn-xs btn-error">Delete</button> </td>
+            <td> <button onClick={()=> handleDelete(name)} className="btn btn-xs btn-error">Delete</button> </td>
             {/* <td>
-                <label onClick={()=> setDeletingProduct(product)} for="delete-confirm-modal" class="btn btn-xs btn-error">Delete</label>
+                <label onClick={()=> setDeletingProduct(product)} for="delete-confirm-modal" className="btn btn-xs btn-error">Delete</label>
                 
             </td> */}
         </tr>
