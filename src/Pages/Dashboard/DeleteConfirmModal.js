@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { toast } from 'react-toastify';
 
-const DeleteConfirmModal = ({deletingOrder, refetch, setDeletingOrder}) => {
-    const {name, customer} = deletingOrder;
-  
+const DeleteConfirmModal = ({deletingOrder, setDeletingOrder}) => {
+    const {_id, name, customer} = deletingOrder;
+    console.log(_id);
     const handleDelete = () => {
-        fetch(`http://localhost:5000/order/${customer}`, {
+        fetch(`http://localhost:5000/order/${_id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -13,14 +13,10 @@ const DeleteConfirmModal = ({deletingOrder, refetch, setDeletingOrder}) => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 if (data.deletedCount) {
-                    toast.success(`${customer} Order is deleted.`);
                     setDeletingOrder(null)
-                    refetch();
-                    if(refetch){
-                    console.log('true');
-                    }
+                    window.location.reload(false);
+                    toast.success(`${customer} Order is deleted.`);
                 }
             })
     }

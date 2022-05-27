@@ -5,9 +5,11 @@ import blog3 from '../../../Assets/blog/blog3.png'
 import blog4 from '../../../Assets/blog/blog5.png'
 import blog6 from '../../../Assets/blog/blog7.png'
 import Footer from '../../Shared/Footer';
+import BlogsBanner from '../BlogsBanner/BlogsBanner';
 const Blogs = () => {
     return (
         <div>
+            <BlogsBanner></BlogsBanner>
             <div className='mx-4'>
                 <div class="card lg:card-side bg-slate-100 shadow-xl mt-8">
                     <figure><img className='w-72' src={blog1} alt="Album" /></figure>
